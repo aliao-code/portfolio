@@ -33,6 +33,7 @@
             Our objectives, as an acting creative agency partner, was to craft two campaigns that would one, 
             increase Level Shoe’s brand awareness and two, increase trial and interest.
         </p>
+        
     </div>
 
     <div class="bio">
@@ -86,10 +87,35 @@
             encouraged users to mix, match, and experiment with products in ways that felt personal and expressive. Partnering with a curated 
             group of micro-influencers, we introduced the experience by testing items through AR and prompting their followers to join in.
         </p>
-        <p> The AR component lived across Instagram and TikTok, featuring virtual shoe try-ons, bag over shoulder previews, and accessory 
-            filters for sunglasses, belts, and hats. To sustain momentum, Level Shoes released weekly filter drops: rotating assortments 
-            of shoes, bags, and accessories, giving users opportunities to discover and try new arrivals.
+
+        <div class="photo-row" aria-label="Challenge visuals">
+            <img src="visuals /ARfiltermodel1.png" alt="Challenge image 1">
+            <img src="visuals /ARfiltermodel2.png" alt="Challenge image 2">
+            <img src="visuals /ARfiltermodel3.jpg" alt="Challenge image 3">
+            <img src="visuals /ARfilterwide1.jpg" alt="Challenge image 4">
+        </div>
+
+        <p> The AR component lived across Instagram and TikTok, but this wasn’t the usual try-on filter. Users selected their favourite pieces from a 
+            curated lineup of shoes, clothing, and accessories, then snapped a photo of themselves. Instantly, the platforms generated a transformed 
+            image, teleporting them into a universe that matched the outfit’s vibe: a surreal, editorial-style world built for sharing. Instead of 
+            simply previewing shoes, bags, or accessories, users could see the possibilities and places their look could take them, imagining entire 
+            moments around the outfits they put together. Weekly filter drops kept the momentum high, introducing new worlds and new items to explore 
+            as the collection evolved.
         </p>
+
+        <div class="photo-panel" aria-label="Challenge visuals panel">
+            <div class="filters">
+                  <p>Instagram / TikTok Filters</p>
+            </div>
+            <div class="rotator" aria-live="polite">
+                <img src="visuals /mag filter.png" alt="Challenge image 5" class="rot-img active">
+                <img src="visuals /bookseditorial.png" alt="Challenge image 6" class="rot-img">
+                <img src="visuals /mag filter (2).png" alt="Challenge image 7" class="rot-img">
+                <img src="visuals /orangeeditorial.png" alt="Challenge image 8" class="rot-img">
+            </div>
+        </div>
+
+
         <p>
             After interacting with the AR tools, users were guided to discover their luxury “Style Archetype” (e.g., The Minimalist Muse, 
             The Midnight Maximalist, The Global Nomad, The Modern Icon). Each archetype unlocked a curated product edit on the Level Shoes 
@@ -102,3 +128,20 @@
 
 
 </html>
+<script>
+// Rotate images in the rotator: show one image at a time, change every 2 seconds
+(function(){
+    const rotator = document.querySelector('.photo-panel .rotator');
+    if (!rotator) return;
+    const imgs = Array.from(rotator.querySelectorAll('.rot-img'));
+    let idx = 0;
+    function show(i){
+        imgs.forEach((img, j)=> img.classList.toggle('active', j===i));
+    }
+    show(0);
+    setInterval(()=>{
+        idx = (idx + 1) % imgs.length;
+        show(idx);
+    }, 3000);
+})();
+</script>

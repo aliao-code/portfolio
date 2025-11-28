@@ -1,0 +1,163 @@
+/* Visual elements: add extra top/bottom padding
+	 - I included `.visual`, `.visual-dic`, `.visual-div`, and `figure`
+	 - If you meant a specific selector, tell me and I'll adjust it. */
+/* Page padding: ensure 1in padding around the viewport */
+body {
+	font-family: "Helvetica Neue";
+    box-sizing: border-box;
+	margin: 0;
+    background-color: #fcf9f5;
+}
+
+/* Global paragraph font and extra vertical spacing */
+p {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	margin-top: 0;
+	margin-bottom: 0;
+    font-size: 18px;
+}
+
+.hero-image {
+    padding: 0;
+    /* no fixed width/height here; the inner <img> will be constrained to the content column */
+}
+
+.hero-image img {
+    display: block;
+    /* Fill the available width (no 9rem gutters) and stay responsive */
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+.advideo {
+    padding-left: 9rem;
+    padding-right: 9rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.advideo video {
+    display: block;
+    /* Fill the available width (no 9rem gutters) and stay responsive */
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+
+.header {
+    padding-left: 9rem;
+    padding-right: 9rem;
+}
+
+.header p {
+    padding-top: 2em;
+}
+.header h1 {
+    font-size: 41px;
+    padding-top:0;
+}
+
+.bio {
+    padding-left: 9rem;
+    padding-right: 9rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.bio h2 {
+    font-size: 22px;
+}
+
+/* Sticky/fixed navbar styles for projectlevelshoes.html */
+.nav {
+	position: fixed;
+	top: 0in; /* stays below the page 1in padding */
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	gap: 3rem; /* 3rem spacing between links */
+	background-color: #fcf9f5;
+	z-index: 1000;
+	padding: 0.3rem 0;
+
+}
+
+.nav a {
+	text-decoration: none;
+	font-weight: 450;
+    height: 100%;
+    padding: 0 30px;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    color: black;
+    font-size: 16px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav li {
+    height: 10px;
+
+
+}
+
+
+.nav li:first-child{
+    margin-right: auto;
+}
+
+.nav a:hover,
+.nav a:focus,
+.nav a:active {
+	text-decoration: underline;
+}
+
+/* Optional: small responsive adjustment so gap doesn't overflow on narrow screens */
+@media (max-width: 520px) {
+	.nav { gap: 1rem; }
+}
+
+/* Show only the scrollbar thumb (no track background) */
+/* Firefox */
+html, body {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.35) transparent; /* thumb color, track transparent */
+}
+
+/* Internet Explorer 10+ */
+html { -ms-overflow-style: auto; }
+
+/* Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent; /* no background for the track */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.35);
+    border-radius: 6px;
+    border: 3px solid transparent; /* create padding so track stays invisible */
+    background-clip: content-box;
+}
+
+/* Note: scrollbar thumb is visible; track is transparent. Scrolling remains functional. */
+

@@ -20,7 +20,7 @@ p {
 }
 
 .hero-image {
-    padding: 0;
+    padding: 2rem 0 0 0;
     /* no fixed width/height here; the inner <img> will be constrained to the content column */
 }
 
@@ -76,6 +76,35 @@ p {
     font-size: 22px;
 }
 
+/* Responsive padding for content sections */
+@media (max-width: 1200px) {
+    .header, .bio, .advideo {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .header, .bio, .advideo {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}
+
+@media (max-width: 720px) {
+    .header, .bio, .advideo {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .header, .bio, .advideo {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
 /* Sticky/fixed navbar styles for projectlevelshoes.html */
 .nav {
 	position: fixed;
@@ -125,6 +154,16 @@ p {
 .nav a:focus,
 .nav a:active {
 	text-decoration: underline;
+}
+/*nav bar */
+/* Apply active state styling */
+.nav a.active {
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.nav a.active::before {
+    content: "     ✿";
 }
 
 /* Optional: small responsive adjustment so gap doesn't overflow on narrow screens */
@@ -227,6 +266,55 @@ body::-webkit-scrollbar-thumb {
     .photo-panel { flex-direction: column; }
     .photo-panel .filters { width: 100%; flex: 0 0 auto; }
     .photo-panel .rotator { width: 100%; aspect-ratio: 4/3; }
+}
+
+/* WORK PAGE blocks: 3-column grid with 2em gap */
+.workblocks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    padding: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.workblock {
+    width: 100%;
+    overflow: hidden;
+}
+
+.workblock img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    transition: border-radius 0.6s ease, filter 0.3s ease;
+}
+
+.workblock img:hover {
+    border-radius: 20px;
+    filter: brightness(0.7);
+}
+
+.workblock p {
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Responsive: 2 columns on tablets */
+@media (max-width: 900px) {
+    .workblocks {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsive: 1 column on mobile */
+@media (max-width: 520px) {
+    .workblocks {
+        grid-template-columns: 1fr;
+        gap: 1em;
+        padding: 1rem;
+    }
 }
 
 

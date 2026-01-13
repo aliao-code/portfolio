@@ -208,7 +208,7 @@ body::-webkit-scrollbar-thumb {
     flex: 1 1 auto;
     position: relative;
     overflow: hidden;
-    /* allow the rotator height to be determined by the visible image */
+    height: 100vh;
 }
 
 .photo-panel .rotator .rot-img {

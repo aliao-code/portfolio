@@ -419,6 +419,8 @@ body::-webkit-scrollbar-thumb {
     
 }
 
+
+
 /* layout for campaign steps: place three .campaign-step items in one horizontal row */
 .campaign-phase {
     display: grid;
@@ -426,6 +428,7 @@ body::-webkit-scrollbar-thumb {
     gap: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    padding-bottom: 2rem;
     /* constrain width similar to other sections by respecting padding on body */
     box-sizing: border-box;
 }
@@ -434,7 +437,7 @@ body::-webkit-scrollbar-thumb {
 .campaign-step img {
     width: 100%;      /* fill step width */
     height: auto;
-    max-width: 180px; /* limit to a reasonable size */
+    max-width: 190px; /* limit to a reasonable size */
     display: block;
     margin: 0 auto 1rem; /* center and add spacing below */
     object-fit: contain;
@@ -450,6 +453,7 @@ body::-webkit-scrollbar-thumb {
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
+
 
 .chart-item {
     display: flex;
@@ -478,7 +482,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .text-content p {
-    font-size: 16px;
+    /*font-size: 16px; */
     line-height: 1.5;
 }
 
@@ -505,8 +509,7 @@ body::-webkit-scrollbar-thumb {
     gap: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 2rem;    
 }
 
 .mockup-gallery img {
@@ -514,11 +517,84 @@ body::-webkit-scrollbar-thumb {
     height: auto;
     display: block;
     object-fit: cover;
+    border-radius: 10px;
+}
+
+.mockup-gallery-text{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.mockup-gallery-text p {
+    font-size: smaller;
+}
+
+.mockup-gallery-text p:first-child {
+    padding-left: 2rem;
+}
+
+/* Responsive: stack campaign steps vertically on mobile */
+@media (max-width: 768px) {
+    /* Campaign Phases section */
+    .campaign-phase {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .campaign-step img {
+        max-width: 70%;
+    }
+
+    /* Why this works section */
+    .chart {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* mockups photo section */
+    .mockup-gallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
 }
 
 
 
-/* Responsive: about project */
+
+
+/* Responsive padding for text-content 
+@media (max-width: 1200px) {
+    .text-content {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .text-content {
+        padding-left: 4rem;
+        padding-right: 4rem;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 720px) {
+    .text-content {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .text-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+/* beneath old code */
+
+/* Responsive: about project 
 @media (max-width: 1200px) {
     .about-project {
         padding-left: 6rem;
@@ -556,14 +632,14 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
-/* Responsive: 2 columns on tablets */
+/* Responsive: 2 columns on tablets 
 @media (max-width: 900px) {
     .workblocks {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Responsive: 1 column on mobile */
+/* Responsive: 1 column on mobile 
 @media (max-width: 520px) {
     .workblocks {
         grid-template-columns: 1fr;
@@ -571,7 +647,7 @@ body::-webkit-scrollbar-thumb {
         padding: 1rem;
     }
 }
-
+*/
 
 
 

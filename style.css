@@ -557,6 +557,12 @@ body::-webkit-scrollbar-thumb {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
+
+    .about-project {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+       
+    }
 }
 
 

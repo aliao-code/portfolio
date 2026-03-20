@@ -643,19 +643,6 @@ body::-webkit-scrollbar-thumb {
     .workblocks {
         grid-template-columns: repeat(2, 1fr);
     }
-}
+} */
 
-/* Responsive: 1 column on mobile 
-@media (max-width: 520px) {
-    .workblocks {
-        grid-template-columns: 1fr;
-        gap: 1em;
-        padding: 1rem;
-    }
-}
-*/
-
-
-
-
-
+/* home.html code below*/

@@ -534,7 +534,7 @@ body::-webkit-scrollbar-thumb {
     padding-left: 2rem;
 }
 
-/* Responsive: stack campaign steps vertically on mobile */
+/* Responsive: stack steps vertically on mobile */
 @media (max-width: 768px) {
     /* Campaign Phases section */
     .campaign-phase {
@@ -646,3 +646,69 @@ body::-webkit-scrollbar-thumb {
 } */
 
 /* home.html code below*/
+.project-title {
+    font-size: 35px;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.carousel-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    /* constrain width similar to other sections by respecting padding on body */
+    box-sizing: border-box;
+    
+}
+
+/* size images inside each step so they don't dominate the layout */
+.carousel-track img {
+    width: 100%;      /* fill step width */
+    height: auto;
+    max-width: 190px; /* limit to a reasonable size */
+    display: block;
+    margin: 0 auto 1rem; /* center and add spacing below */
+    object-fit: contain;
+}
+
+.carousel-track p {
+    padding-left: 2.5rem;
+}
+
+.crumbl-project1 img {
+    max-width: 100%;
+}
+
+.crumbl-project {
+    background-image: url('home_visuals/crumblbackground3.png');
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+
+.crumbl-project img {
+    max-width: 100%;
+}
+
+.end-card {
+    background-image: url('home_visuals/grass.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 700px;
+    width: 100%;
+    display: block;
+}
+
+/* If you'd like the end-card to match the image width of hero image style: */
+.end-card img {
+    max-width: 100%;
+    height: auto;
+}

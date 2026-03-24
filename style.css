@@ -62,10 +62,26 @@ p {
 .TT-phase {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding-left: 9rem;
-    padding-right: 9rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    width: 100%;
     /* constrain width similar to other sections by respecting padding on body */
     box-sizing: border-box;
+}
+
+/* per-step spacing for campaign phase videos */
+.TT-step {
+    padding: 0.5rem;
+}
+
+/* size videos inside each step so they don't dominate the layout */
+.TT-step video {
+    width: 100%;      /* fill step width */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem; /* center and add spacing below */
+    object-fit: contain;
 }
 
 /* Campaign Phases section: mobile friendly 1-column rows */
@@ -83,25 +99,7 @@ p {
     }
 }
 
-/* size images inside each step so they don't dominate the layout */
-.TT-step video {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding-left: 9rem;
-    padding-right: 9rem;
-    /* constrain width similar to other sections by respecting padding on body */
-    box-sizing: border-box;
-}
 
-/* size images inside each step so they don't dominate the layout */
-.TT-step video {
-    width: 100%;      /* fill step width */
-    height: auto;
-     /* limit to a reasonable size */
-    display: block;
-    margin: 0 auto 1rem; /* center and add spacing below */
-    object-fit: contain;
-}
 
 
 .header {

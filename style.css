@@ -24,13 +24,18 @@ p {
     /* no fixed width/height here; the inner <img> will be constrained to the content column */
 }
 
-.hero-image img {
+.hero-image img,
+.hero-image video {
     display: block;
     /* Fill the available width (no 9rem gutters) and stay responsive */
     width: 100%;
     max-width: 100%;
     height: auto;
     margin: 0 auto;
+}
+
+.hero-image {
+    overflow: hidden;
 }
 
 
@@ -50,6 +55,53 @@ p {
     margin: 0 auto;
 }
 
+.advideo p {
+    font-size: 14px;
+}
+
+.TT-phase {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-left: 9rem;
+    padding-right: 9rem;
+    /* constrain width similar to other sections by respecting padding on body */
+    box-sizing: border-box;
+}
+
+/* Campaign Phases section: mobile friendly 1-column rows */
+@media (max-width: 768px) {
+    .TT-phase {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+
+    .TT-step video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* size images inside each step so they don't dominate the layout */
+.TT-step video {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-left: 9rem;
+    padding-right: 9rem;
+    /* constrain width similar to other sections by respecting padding on body */
+    box-sizing: border-box;
+}
+
+/* size images inside each step so they don't dominate the layout */
+.TT-step video {
+    width: 100%;      /* fill step width */
+    height: auto;
+     /* limit to a reasonable size */
+    display: block;
+    margin: 0 auto 1rem; /* center and add spacing below */
+    object-fit: contain;
+}
 
 
 .header {
@@ -79,6 +131,11 @@ p {
 .bio p {
     font-size: 16px;
     line-height: 1.5;
+}
+
+.bio img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Two-column layout for bio-column: h2 left, p right */
@@ -681,7 +738,7 @@ body::-webkit-scrollbar-thumb {
     padding-left: 2.5rem;
 }
 
-.crumbl-project1 img {
+.cookie-lineup img {
     max-width: 100%;
 }
 
@@ -711,4 +768,16 @@ body::-webkit-scrollbar-thumb {
 .end-card img {
     max-width: 100%;
     height: auto;
+}
+
+.LS-project {
+    background-image: url('home_visuals/LSbackground.png');
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 400px;
+}
+
+.LS-project img {
+    max-width: 100%;
 }
